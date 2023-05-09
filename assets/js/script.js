@@ -180,7 +180,7 @@ startButton.addEventListener("click", startGame);
 init();
 
 // Bonus: Add reset button
-var resetButton = document.querySelector(".reset-button");
+var resetTheGame = document.querySelector(".reset-button");
 
 function resetGame() {
   // Resets win and loss counts
@@ -191,4 +191,4 @@ function resetGame() {
   setLosses()
 }
 // Attaches event listener to button
-resetButton.addEventListener("click", resetGame);
+resetTheGame.addEventListener("click", resetGame);
