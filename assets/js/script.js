@@ -12,6 +12,7 @@ var isWin = false;
 var timer;
 var timerCounts;
 
+
 // Arrays used to create blanks and letters on screen
 var lettersInChosenWord = [];
 var blanksLetters = [];
@@ -29,6 +30,7 @@ function init() {
 function startGame() {
   isWin = false;
   timerCounts = 10;
+  
   // Prevents start button from being clicked when round is in progress
   startButton.disabled = true;
   renderBlanks()
@@ -66,6 +68,7 @@ function startTimer() {
       }
     }
     // Tests if time has run out
+
     if (timerCounts === 0) {
       // Clears interval
       clearInterval(timer);
@@ -155,6 +158,7 @@ function checkLetters(letter) {
 // Attach event listener to document to listen for key event
 document.addEventListener("keydown", function(event) {
   // If the count is zero, exit function
+
   if (timerCounts === 0) {
     return;
   }
