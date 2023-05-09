@@ -10,7 +10,7 @@ var winCounter = 0;
 var loseCounter = 0;
 var isWin = false;
 var timer;
-var timerCounter;
+var timerCounterPlus;
 
 // Arrays used to create blanks and letters on screen
 var lettersInChosenWord = [];
@@ -28,7 +28,7 @@ function init() {
 // The startGame function is called when the start button is clicked
 function startGame() {
   isWin = false;
-  timerCounter = 10;
+  timerCounterPlus = 10;
   // Prevents start button from being clicked when round is in progress
   startButton.disabled = true;
   renderBlanks()
@@ -55,18 +55,18 @@ function loseGame() {
 function startTimer() {
   // Sets timer
   timer = setInterval(function() {
-    timerCounter--;
-    timerElement.textContent = timerCounter;
-    if (timerCounter >= 0) {
+    timerCounterPlus--;
+    timerElement.textContent = timerCounterPlus;
+    if (timerCounterPlus >= 0) {
       // Tests if win condition is met
-      if (isWin && timerCounter > 0) {
+      if (isWin && timerCounterPlus > 0) {
         // Clears interval and stops timer
         clearInterval(timer);
         winGame();
       }
     }
     // Tests if time has run out
-    if (timerCounter === 0) {
+    if (timerCounterPlus === 0) {
       // Clears interval
       clearInterval(timer);
       loseGame();
@@ -155,7 +155,7 @@ function checkLetters(letter) {
 // Attach event listener to document to listen for key event
 document.addEventListener("keydown", function(event) {
   // If the count is zero, exit function
-  if (timerCounter === 0) {
+  if (timerCounterPlus === 0) {
     return;
   }
   // Convert all keys to lower case
